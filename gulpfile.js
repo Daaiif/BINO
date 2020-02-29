@@ -47,7 +47,7 @@ gulp.task('js', () => {
         .pipe(uglify({
             toplevel: true
         }))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./build/js'))
     .pipe(browserSync.stream());
 });
