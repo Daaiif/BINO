@@ -1,0 +1,157 @@
+.portfolio {
+    margin-top: 140px;
+
+    .portfolio-title {
+        font-family: 'Source Sans Pro';
+        font-weight: 700;
+        font-size: 36px;
+        letter-spacing: 3.6px;
+        color: $portfolio-title;
+        text-transform: uppercase;
+    }
+
+    > p {
+        font-size: 14px;
+        line-height: 29px;
+        color: $portfolio-gray;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .portfolio-divider {
+        @include divider(#999999);
+    }
+
+    .portfolio-links {
+        margin: 40px 0;
+        text-align: center;
+        color: $portfolio-gray;
+
+        a {
+            text-decoration: none;
+            font-size: 14px;
+            color: $portfolio-gray;
+            display: inline-block;
+            margin: 5px 17px;
+            transition-duration: 500ms;
+            transition-property: color;
+
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+
+    .portfolio-block {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1920px;
+        margin: 40px auto 0;
+    }
+
+    .portfolio-element {
+        flex-basis: 25%;
+        position: relative;
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+    
+            &::after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: rgba(231,76,60,.8);
+                opacity: 0;
+                transition-duration: 500ms;
+                transition-property: opacity;
+            }
+            &:hover {
+                &::after, p {
+                    opacity: 1;
+                }
+            }
+        }
+
+        p {
+            position: absolute;
+            left: 10%;
+            bottom: 35px;
+            z-index: 1;
+            color: $white;
+            opacity: 0;
+            transition-duration: 500ms;
+            transition-property: opacity;
+    
+            &::before {
+                content: '';
+                height: 4px;
+                width: 44px;
+                background-color: $white;
+                display: block;
+                margin-bottom: 25px;
+            }
+    
+            span {
+                display: block;
+                margin: 15px 0;
+                font-size: 14px;
+                letter-spacing: .7px;
+    
+                &:first-child {
+                    font-family: 'Source Sans Pro';
+                    text-transform: uppercase;
+                    font-size: 24px;
+                    font-weight: 600;
+                    letter-spacing: 1.2px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 980px) {
+    .portfolio {
+        margin-top: 50px;
+
+        .portfolio-element {
+
+            p {
+                bottom: 10px;
+
+                span {
+                    &:first-child {
+                        font-size: 17px;
+                        letter-spacing: .85px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+
+        .portfolio-element {
+            flex-basis: 50%;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio {
+
+        .portfolio-element {
+            flex-basis: 100%;
+        }
+    }
+}
