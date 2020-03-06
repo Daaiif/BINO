@@ -1,0 +1,200 @@
+.price {
+    margin: 140px auto;
+
+
+    .price-title {
+        font-family: 'Source Sans Pro';
+        font-weight: 700;
+        font-size: 36px;
+        letter-spacing: 3.6px;
+        color: $portfolio-title;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 29px;
+        color: $portfolio-gray;
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    .price-divider {
+        @include divider(#999999);
+    }
+
+
+    .price-block {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .price-element {
+        flex-basis: 32.4%;
+        margin-top: 20px;
+        background-color: $white-gray;
+
+        &:hover {
+
+            .price-top {
+                background-color: $red;
+            }
+
+            .price-bottom {
+                .price-number {
+                    p {
+                        color: $red;
+                    }
+                }
+            }
+            
+        }
+
+        .price-top {
+            background-color: $price-gray;
+            padding-bottom: 90px;
+            transition-duration: 500ms;
+            transition-property: background-color;
+    
+            .price-name {
+                font-size: 24px;
+                font-weight: 600;
+                letter-spacing: 1.8px;
+                text-transform: uppercase;
+                color: $white;
+                margin: 0;
+                padding: 40px 0;
+            }
+    
+        }
+    
+        .price-bottom {
+    
+            padding-bottom: 20px;
+    
+            .price-number {
+                width: 153px;
+                padding: 46px 0;
+                background-color: $white;
+                border: 10px solid rgba(244,245,249,.25);
+                border-radius: 50%;
+                margin: -86px auto 0;
+    
+                p {
+                    font-weight: 700;
+                    font-size: 39px;
+                    line-height: 40px;
+                    font-family: 'Source Sans Pro';
+                    margin: 0;
+                    color: $price-gray;
+                    text-align: center;
+                    transition-duration: 500ms;
+                    transition-property: color;
+    
+                    span {
+                        font-size: 13px;
+                        line-height: 21px;
+                        font-weight: 400;
+                        display: block;
+                        color: $price-gray;
+                    }
+    
+                }
+    
+            }
+    
+            .price-list {
+                text-align: center;
+                margin: 40px 0;
+    
+                li {
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin: 20px 0;
+                    font-weight: 600;
+                    color: $price-gray;
+                }
+    
+            }
+    
+            .price-btn {
+                @include btn($price-gray) {
+                    width: 145px;
+                    padding: 13px 0;
+                    display: block;
+                    border-radius: 2px;
+                    font-size: 12px;
+                    line-height: 16px;
+                    letter-spacing: 0.12px;
+                    margin: 30px auto;
+                    font-weight: 600;
+                };
+            }
+    
+        }
+    
+
+    }
+
+    .price-element-red {
+
+        .price-top {
+            background-color: $red;
+        }
+
+        
+        
+        .price-bottom {
+
+            .price-number {
+                
+                p {
+                    color: $red;
+                }
+    
+            }
+
+            .price-btn {
+                background-color: $red;
+                border-color: $red;
+            }
+        }
+    }
+
+    
+
+}
+
+
+@media (max-width: 980px) {
+    .price {
+        margin: 50px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .price {
+
+        .price-block {
+            justify-content: center;
+        }
+
+        .price-element {
+            flex-basis: 45%;
+            margin: 20px 2.5%;
+        }
+
+    }
+}
+
+
+@media (max-width: 580px) {
+    .price {
+        .price-element {
+            flex-basis: 100%;
+            margin: 15px 0;
+        }
+    }
+}
