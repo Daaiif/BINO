@@ -1,6 +1,6 @@
 .blog {
     background-color: $white-gray;
-    padding: 140px 0;
+    padding: 140px 0 0;
 
     .blog-title {
         font-family: 'Source Sans Pro';
@@ -143,7 +143,7 @@
 
 @media (max-width: 980px) {
     .blog {
-        padding: 50px 0;
+        padding: 50px 0 0;
 
         .blog-element {
             flex-basis: 100%;
